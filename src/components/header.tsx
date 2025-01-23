@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { useTheme } from '../context/theme-provider';
 import { ThemeToggle } from './theme-toggle';
+import { CitySearch } from './city-search';
 
 const Header = () => {
     const { theme } = useTheme();
@@ -13,7 +14,7 @@ const Header = () => {
                 </Link>
 
                 <div>
-                    {/* Search */}
+                    <CitySearch />
                     <ThemeToggle />
                 </div>
             </div>
