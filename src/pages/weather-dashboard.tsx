@@ -6,6 +6,8 @@ import { Alert, AlertDescription, AlertTitle } from '../components/ui/alert';
 import { useForecastQuery, useReverseGeocodeQuery, useWeatherQuery } from '../hooks/use-weather';
 import { CurrentWeather } from '../components/current-weather';
 import { HourlyTemperature } from '../components/hourly-temprature';
+import { WeatherDetails } from '../components/weather-details';
+import { WeatherForecast } from '../components/weather-forecast';
 
 const WeatherDashboard = () => {
     const { coordinates, error: locationError, getLocation, isLoading: locationLoading } = useGeolocation();
@@ -103,8 +105,8 @@ const WeatherDashboard = () => {
                 </div>
 
                 <div>
-                    {/* details */}
-                    {/* forecast */}
+                    <WeatherDetails data={weatherQuery.data} />
+                    <WeatherForecast data={forecastQuery.data} />
                 </div>
             </div>
         </div>
